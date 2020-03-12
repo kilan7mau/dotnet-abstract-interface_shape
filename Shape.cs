@@ -35,7 +35,7 @@ namespace Shape
       this.filled = filled;
     }
 
-    public string tostring()
+    public override string ToString()
     {
       return "A Shape with color of "
               + getColor()
