@@ -1,6 +1,8 @@
+using System;
+
 namespace Shape
 {
-  public class Square : Rectangle , Resizeable
+  public class Square : Rectangle , Resizeable, IColorable
   {
     public Square()
     {
@@ -34,6 +36,11 @@ namespace Shape
       setSide(length);
     }
 
+    public double getArea()
+    {
+      return getSide() * getSide();
+    }
+
     public override string ToString()
     {
       return "A Square with side="
@@ -45,6 +52,11 @@ namespace Shape
     public void Resize(double percent)
     {
       setSide(getSide() * percent);
+    }
+    // Cho lớp Square triển khai interface này với phương thức HowToColor() hiển thị thông điệp Color all four sides..
+    public void HowToColor()
+    {
+      Console.WriteLine("Color all four sides..");
     }
   }
 }

@@ -55,7 +55,31 @@ namespace Shape
       rectangle.Resize(percent);
       Console.WriteLine(rectangle);
       
-      
+      //Tạo một mảng các đối tượng hình học trong đó có ít nhất một Square. Với mỗi phần tử trong mảng, hiển thị diện tích của nó, nếu phần tử đó là một IColorable, gọi phương thức HowToColor()
+      Shape[] shapes = new Shape[3];
+      shapes[0] = new Circle(3.5, "indigo", false);
+      shapes[1] = new Rectangle(2.0, 3.0);
+      shapes[2] = new Square(5.8, "yellow", true);
+      foreach (Shape shape1 in shapes)
+      {
+        Console.WriteLine(shape1);
+        if (shape1 is Square)
+        {
+          Console.WriteLine("Area: " + ((Square) shape1).getArea());
+        }
+        else if(shape1 is Rectangle)
+        {
+          Console.WriteLine("Area: " + ((Rectangle) shape1).getArea());
+        }
+        else if (shape1 is Circle)
+          {
+          Console.WriteLine("Area: " + ((Circle) shape1).getArea());
+        }
+        if (shape1 is IColorable)
+        {
+          ((Square) shape1).HowToColor();
+        }
+      }
 
     }
   }
