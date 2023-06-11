@@ -1,6 +1,6 @@
 namespace Shape
 {
-  public class Rectangle : Shape
+  public class Rectangle : Shape, Resizeable
   {
     private double width = 1.0;
     private double length = 1.0;
@@ -50,7 +50,11 @@ namespace Shape
     {
       return 2 * (width + this.length);
     }
-
+    public void Resize(double percent)
+    {
+      setWidth(getWidth() * percent);
+      setLength(getLength() * percent);
+    }
     public override string ToString()
     {
       return "A Rectangle with width="
@@ -60,5 +64,6 @@ namespace Shape
               + ", which is a subclass of "
               + base.ToString();
     }
+    
   }
 }

@@ -2,7 +2,7 @@ using System;
 
 namespace Shape
 {
-  public class Circle : Shape
+  public  class Circle : Shape , Resizeable
   {
     private double radius = 1.0;
 
@@ -46,6 +46,11 @@ namespace Shape
               + getRadius()
               + ", which is a subclass of "
               + base.ToString();
+    }
+
+    public void Resize(double percent)
+    {
+      setRadius(getRadius() * percent);
     }
   }
 }

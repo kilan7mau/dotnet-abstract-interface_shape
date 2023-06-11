@@ -1,6 +1,6 @@
 namespace Shape
 {
-  public class Square : Rectangle
+  public class Square : Rectangle , Resizeable
   {
     public Square()
     {
@@ -40,6 +40,11 @@ namespace Shape
               + getSide()
               + ", which is a subclass of "
               + base.ToString();
+    }
+
+    public void Resize(double percent)
+    {
+      setSide(getSide() * percent);
     }
   }
 }

@@ -32,6 +32,31 @@ namespace Shape
 
       square = new Square(5.8, "yellow", true);
       Console.WriteLine(square);
+      
+      //Viết mã kiểm thử cho interface Resizeable
+      Console.WriteLine("Before resize: ");
+      Console.WriteLine("Circle: ");
+      Console.WriteLine(circle);
+      Console.WriteLine("Square: ");
+      Console.WriteLine(square);
+      Console.WriteLine("Rectangle: ");
+      Rectangle rectangle = new Rectangle(2.0, 3.0);
+      Console.WriteLine(rectangle);
+      Console.WriteLine("After resize: ");
+      Random random = new Random();
+      double percent = random.NextDouble() * 100;
+      Console.WriteLine("Circle: ");
+      circle.Resize(percent);
+      Console.WriteLine(circle);
+      Console.WriteLine("Square: ");
+      square.Resize(percent);
+      Console.WriteLine(square);
+      Console.WriteLine("Rectangle: ");
+      rectangle.Resize(percent);
+      Console.WriteLine(rectangle);
+      
+      
+
     }
   }
 }
